@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/m5X4G91sytdL+dqK+68KADuZ0HeMBSI2eUE3atiwOsEQ/E0+JrLin6znuMOfDsPV1X5GPGNZr9NlemM17FCTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jeric\\Documents\\VSProject\\Local Project\\CreatingTextFile\\CreatingTextFile\\CreatingTextFile.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jeric\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}
