@@ -1,0 +1,9 @@
+Requirements : Dev mode
+
+Net5.0
+Visual Studio 2021 or Late
+
+To Do : User Mode
+
+bin>Debug>net5.0-windows>.exe 
+To run the program without using VS
