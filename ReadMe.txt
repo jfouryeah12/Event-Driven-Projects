@@ -10,4 +10,4 @@ To Test the program without using VS
 
 
 :NOTE:
-File txt can be found in MyDocuments
+File txt can be found in Documents
