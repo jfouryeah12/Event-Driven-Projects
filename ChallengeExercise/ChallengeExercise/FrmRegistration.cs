@@ -13,48 +13,46 @@ namespace ChallengeExercise
 {
     public partial class FrmRegistration : Form
     {
+        static String[] _call_var;
+
         public FrmRegistration()
         {
             InitializeComponent();
+             
         }
 
         public static string SetFileName { get; private set; }
 
-        private void btn_Register_Click(object sender, EventArgs e)//btn Register Functionality
+        public void _info() 
         {
-            //Student Number / Contact Number
             String getInput_StudentNum = this.txt_StudentNum.Text;
             String getInput_Contact = this.txt_Contact.Text;
-            //End
-            //Last Name / First Name / MI / Age / Birthday
             String getInput_LastName = this.txt_LastName.Text;
             String getInput_FirstName = this.txt_FirstName.Text;
             String getInput_MI = this.txt_MI.Text;
             String getInput_Age = this.txt_Age.Text;
             String getInput_Bday = this.Bday_Date.Text;
-            //End
-            //Gender
             String getInput_Gender = this.cb_Gender.Text;
-            //End
-            //Program
             String getInput_Program = this.cb_Programs.Text;
-            //End
 
+            SetFileName = getInput_StudentNum.ToString() + ".txt";
 
-            SetFileName = getInput_StudentNum.ToString() + ".txt"; // File Name .txt
-            //Path Doc
+            _call_var = new string[] {"Student No. "+ getInput_StudentNum + "\nFullName: " + getInput_LastName + ", " + getInput_FirstName + ", " + getInput_MI
+            +"\nProgram: "+getInput_Program+"\nGender: "+getInput_Gender+"\nAge: " + getInput_Age + "\nBirthday: " + getInput_Bday+"\nContact: " + getInput_Contact
+            };
+        }
+
+        private void btn_Register_Click(object sender, EventArgs e)
+        {
+            _info();
             string docPath =
                 Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath,FrmRegistration.SetFileName)))
             {
-                
-                //Print Text
-                outputFile.WriteLine("Student No.: "+getInput_StudentNum+"\nFullName: "+getInput_LastName+", "+getInput_FirstName+", "+getInput_MI);
-                outputFile.WriteLine("Program: "+getInput_Program+"\nGender: "+getInput_Gender);
-                outputFile.WriteLine("Age: " + getInput_Age + "\nBirthday: " + getInput_Bday);
-                outputFile.WriteLine("Contact: " + getInput_Contact);
-                //End
-                //Check Console
+                foreach (string _Info_ in _call_var) 
+                {
+                    outputFile.WriteLine(_Info_); 
+                }
                 Console.WriteLine("Done!");
                 
             }
